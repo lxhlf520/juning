@@ -20,7 +20,7 @@
             </div>
             <div>
               <div class="font-semibold text-text-light mb-1">电子邮箱</div>
-              <div class="text-text-light-muted text-sm">{{ companyInfo.email || 'contact@shulantech.com' }}</div>
+              <div class="text-text-light-muted text-sm">{{ companyInfo.email || 'contact@juningdata.com' }}</div>
             </div>
           </div>
 
@@ -56,7 +56,7 @@
             </div>
             <div>
               <div class="font-semibold text-text-light mb-1">微信公众号</div>
-              <div class="text-text-light-muted text-sm">{{ companyInfo.wechat || 'shulantech' }}</div>
+              <div class="text-text-light-muted text-sm">{{ companyInfo.wechat || 'juningdata' }}</div>
             </div>
           </div>
         </div>

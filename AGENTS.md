@@ -1,7 +1,7 @@
 # AGENTS.md
 
 ## 项目概览
-数澜科技公司门户 —— 互联网数据技术服务公司展示网站。
+聚宁数据公司门户 —— 互联网数据技术服务公司展示网站。
 技术栈：Vue3 + Vite + TailwindCSS（前端）、Python FastAPI + SQLAlchemy（后端）、MySQL/SQLite（数据库）。
 
 ## 目录结构

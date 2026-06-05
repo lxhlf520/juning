@@ -6,7 +6,22 @@
     </linearGradient>
   </defs>
   <rect width="32" height="32" rx="8" fill="url(#g)"/>
-  <path d="M16 6L6 11v10l10 5 10-5V11L16 6z" fill="none" stroke="white" stroke-width="2" stroke-linejoin="round"/>
-  <path d="M6 11l10 5 10-5" fill="none" stroke="white" stroke-width="1.5" opacity="0.6"/>
-  <line x1="16" y1="26" x2="16" y2="16" stroke="white" stroke-width="1.5"/>
+  <!-- 中心六边形 -->
+  <polygon points="16,7 22,11.5 22,20.5 16,25 10,20.5 10,11.5" fill="none" stroke="white" stroke-width="1.8" stroke-linejoin="round"/>
+  <!-- 中心点 -->
+  <circle cx="16" cy="16" r="2.5" fill="white" opacity="0.9"/>
+  <!-- 连接线 -->
+  <line x1="16" y1="7" x2="16" y2="13.5" stroke="white" stroke-width="1" opacity="0.6"/>
+  <line x1="22" y1="11.5" x2="18" y2="14.5" stroke="white" stroke-width="1" opacity="0.6"/>
+  <line x1="22" y1="20.5" x2="18" y2="17.5" stroke="white" stroke-width="1" opacity="0.6"/>
+  <line x1="16" y1="25" x2="16" y2="18.5" stroke="white" stroke-width="1" opacity="0.6"/>
+  <line x1="10" y1="20.5" x2="14" y2="17.5" stroke="white" stroke-width="1" opacity="0.6"/>
+  <line x1="10" y1="11.5" x2="14" y2="14.5" stroke="white" stroke-width="1" opacity="0.6"/>
+  <!-- 外围小点 -->
+  <circle cx="16" cy="5" r="1.2" fill="white" opacity="0.5"/>
+  <circle cx="24" cy="10" r="1.2" fill="white" opacity="0.5"/>
+  <circle cx="24" cy="22" r="1.2" fill="white" opacity="0.5"/>
+  <circle cx="16" cy="27" r="1.2" fill="white" opacity="0.5"/>
+  <circle cx="8" cy="22" r="1.2" fill="white" opacity="0.5"/>
+  <circle cx="8" cy="10" r="1.2" fill="white" opacity="0.5"/>
 </svg>

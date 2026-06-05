@@ -75,12 +75,12 @@ CASES_SEED = [
 ]
 
 COMPANY_INFO_SEED = [
-    {"key": "company_name", "value": "数澜科技"},
-    {"key": "company_slogan", "value": "以数据驱动决策，用技术赋能增长"},
-    {"key": "company_email", "value": "contact@shulantech.com"},
+    {"key": "company_name", "value": "聚宁数据"},
+    {"key": "company_slogan", "value": "聚数成智，宁定未来"},
+    {"key": "company_email", "value": "contact@juningdata.com"},
     {"key": "company_phone", "value": "400-888-9999"},
     {"key": "company_address", "value": "北京市海淀区中关村软件园二期"},
-    {"key": "company_wechat", "value": "shulantech"},
+    {"key": "company_wechat", "value": "juningdata"},
 ]
 
 

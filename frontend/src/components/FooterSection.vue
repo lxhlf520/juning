@@ -4,12 +4,8 @@
       <div class="flex flex-col md:flex-row items-center justify-between gap-6">
         <!-- Logo & Copyright -->
         <div class="flex items-center gap-3">
-          <div class="w-7 h-7 rounded-lg bg-gradient-to-br from-accent-cyan to-accent-violet flex items-center justify-center">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
-            </svg>
-          </div>
-          <span class="text-text-dark-muted text-sm">&copy; {{ year }} 数澜科技. All rights reserved.</span>
+          <img src="/logo-v2.png" alt="聚宁数据" class="w-7 h-7 rounded-md object-cover" />
+          <span class="text-text-dark-muted text-sm">&copy; {{ year }} 聚宁数据. All rights reserved.</span>
         </div>
 
         <!-- Quick Links -->

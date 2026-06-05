@@ -9,10 +9,10 @@
     <!-- Content -->
     <div class="relative z-10 max-w-4xl mx-auto px-6 text-center">
       <h1 class="text-4xl md:text-6xl font-bold text-white leading-tight tracking-tight mb-6">
-        以<span class="gradient-text">数据</span>驱动决策<br />用<span class="gradient-text">技术</span>赋能增长
+        聚<span class="gradient-text">数</span>成智<br />宁<span class="gradient-text">定</span>未来
       </h1>
       <p class="text-lg md:text-xl text-text-dark-muted max-w-2xl mx-auto mb-10 leading-relaxed">
-        专注于数据分析、智能采集与全栈开发，为企业提供从数据到增长的一站式技术解决方案。
+        聚宁数据——专注数据分析、智能采集与全栈开发，为企业提供从数据到增长的一站式技术解决方案。
       </p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
         <a
