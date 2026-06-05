@@ -20,8 +20,12 @@ export default defineConfig({
       },
     },
     hmr: {
-      port: 6000,
+      port: 5000,
       path: '/hot/vite-hmr',
+      protocol: 'wss',
+    },
+    watch: {
+      usePolling: true,
     },
   },
 })
