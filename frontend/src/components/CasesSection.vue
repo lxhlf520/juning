@@ -17,11 +17,19 @@
           :key="item.id"
           class="case-card bg-dark-card rounded-xl overflow-hidden border border-white/5 reveal"
         >
-          <!-- Image Placeholder -->
-          <div class="h-48 bg-gradient-to-br from-accent-cyan/20 to-accent-violet/20 flex items-center justify-center">
-            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="rgba(6,182,212,0.5)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-              <rect x="3" y="3" width="18" height="18" rx="2" /><circle cx="8.5" cy="8.5" r="1.5" /><path d="m21 15-5-5L5 21" />
-            </svg>
+          <!-- Case Image -->
+          <div class="h-48 overflow-hidden">
+            <img
+              v-if="item.image"
+              :src="item.image"
+              :alt="item.title"
+              class="w-full h-full object-cover"
+            />
+            <div v-else class="w-full h-full bg-gradient-to-br from-accent-cyan/20 to-accent-violet/20 flex items-center justify-center">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="rgba(6,182,212,0.5)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="3" width="18" height="18" rx="2" /><circle cx="8.5" cy="8.5" r="1.5" /><path d="m21 15-5-5L5 21" />
+              </svg>
+            </div>
           </div>
           <div class="p-6">
             <h3 class="text-lg font-bold text-white mb-2">{{ item.title }}</h3>
