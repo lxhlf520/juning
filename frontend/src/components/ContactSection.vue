@@ -20,7 +20,7 @@
             </div>
             <div>
               <div class="font-semibold text-text-light mb-1">电子邮箱</div>
-              <div class="text-text-light-muted text-sm">{{ companyInfo.email || 'contact@juningdata.com' }}</div>
+              <div class="text-text-light-muted text-sm">{{ companyInfo.email || 'juningdata@163.com' }}</div>
             </div>
           </div>
 
@@ -32,7 +32,7 @@
             </div>
             <div>
               <div class="font-semibold text-text-light mb-1">联系电话</div>
-              <div class="text-text-light-muted text-sm">{{ companyInfo.phone || '400-888-9999' }}</div>
+              <div class="text-text-light-muted text-sm">{{ companyInfo.phone || '17770775849' }}</div>
             </div>
           </div>
 
@@ -44,7 +44,7 @@
             </div>
             <div>
               <div class="font-semibold text-text-light mb-1">公司地址</div>
-              <div class="text-text-light-muted text-sm">{{ companyInfo.address || '北京市海淀区中关村软件园二期' }}</div>
+              <div class="text-text-light-muted text-sm">{{ companyInfo.address || '深圳市南山区腾讯软件园一期A座2903' }}</div>
             </div>
           </div>
 

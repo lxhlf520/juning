@@ -77,9 +77,9 @@ CASES_SEED = [
 COMPANY_INFO_SEED = [
     {"key": "company_name", "value": "聚宁数据"},
     {"key": "company_slogan", "value": "聚数成智，宁定未来"},
-    {"key": "company_email", "value": "contact@juningdata.com"},
-    {"key": "company_phone", "value": "400-888-9999"},
-    {"key": "company_address", "value": "北京市海淀区中关村软件园二期"},
+    {"key": "company_email", "value": "juningdata@163.com"},
+    {"key": "company_phone", "value": "17770775849"},
+    {"key": "company_address", "value": "深圳市南山区腾讯软件园一期A座2903"},
     {"key": "company_wechat", "value": "juningdata"},
 ]
 
