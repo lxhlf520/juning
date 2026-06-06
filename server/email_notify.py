@@ -2,15 +2,20 @@
 
 import os
 import logging
+from pathlib import Path
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 from typing import Optional
 
+from dotenv import load_dotenv
 import aiosmtplib
+
+# 加载 .env 文件
+load_dotenv(Path(__file__).parent / ".env")
 
 logger = logging.getLogger(__name__)
 
-# SMTP 配置（通过环境变量读取）
+# SMTP 配置（通过环境变量读取，.env 文件已包含授权码）
 SMTP_HOST = os.getenv("SMTP_HOST", "smtp.163.com")
 SMTP_PORT = int(os.getenv("SMTP_PORT", "465"))
 SMTP_USER = os.getenv("SMTP_USER", "juningdata@163.com")
