@@ -81,7 +81,7 @@ def get_cases(db: Session = Depends(get_db)):
 
 
 @router.post("/contact")
-def submit_contact(data: ContactIn, db: Session = Depends(get_db)):
+async def submit_contact(data: ContactIn, db: Session = Depends(get_db)):
     msg = ContactMessage(
         name=data.name,
         email=data.email,
@@ -92,6 +92,21 @@ def submit_contact(data: ContactIn, db: Session = Depends(get_db)):
     db.add(msg)
     db.commit()
     db.refresh(msg)
+
+    # 发送邮件通知（异步，不阻塞响应）
+    try:
+        from server.email_notify import send_contact_notification
+        await send_contact_notification(
+            name=data.name,
+            email=data.email,
+            phone=data.phone,
+            company=data.company,
+            message=data.message,
+        )
+    except Exception as e:
+        import logging
+        logging.getLogger(__name__).warning(f"邮件通知发送失败: {e}")
+
     return {"success": True, "id": msg.id}
 
 
