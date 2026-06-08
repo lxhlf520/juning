@@ -7,6 +7,7 @@ from server.database import Base
 
 class Service(Base):
     __tablename__ = "services"
+    __table_args__ = {"extend_existing": True}
 
     id = Column(Integer, primary_key=True, autoincrement=True)
     title = Column(String(100), nullable=False)
@@ -19,6 +20,7 @@ class Service(Base):
 
 class Case(Base):
     __tablename__ = "cases"
+    __table_args__ = {"extend_existing": True}
 
     id = Column(Integer, primary_key=True, autoincrement=True)
     title = Column(String(200), nullable=False)
@@ -32,6 +34,7 @@ class Case(Base):
 
 class ContactMessage(Base):
     __tablename__ = "contact_messages"
+    __table_args__ = {"extend_existing": True}
 
     id = Column(Integer, primary_key=True, autoincrement=True)
     name = Column(String(100), nullable=False)
@@ -44,6 +47,7 @@ class ContactMessage(Base):
 
 class CompanyInfo(Base):
     __tablename__ = "company_info"
+    __table_args__ = {"extend_existing": True}
 
     id = Column(Integer, primary_key=True, autoincrement=True)
     key = Column(String(100), nullable=False, unique=True)
@@ -52,6 +56,7 @@ class CompanyInfo(Base):
 
 class User(Base):
     __tablename__ = "users"
+    __table_args__ = {"extend_existing": True}
 
     id = Column(Integer, primary_key=True, autoincrement=True)
     username = Column(String(100), nullable=False, unique=True)
@@ -64,6 +69,7 @@ class User(Base):
 
 class Project(Base):
     __tablename__ = "projects"
+    __table_args__ = {"extend_existing": True}
 
     id = Column(Integer, primary_key=True, autoincrement=True)
     start_date = Column(String(50), default="")           # 开始时间
