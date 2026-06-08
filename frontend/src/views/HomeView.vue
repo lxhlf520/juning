@@ -1,9 +1,24 @@
 <template>
-  <div>
-    <h1>数澜科技 - 企业门户</h1>
-    <p>以数据驱动决策，用技术赋能增长</p>
-  </div>
+  <NavBar />
+  <main>
+    <HeroSection />
+    <ServicesSection />
+    <CasesSection />
+    <AboutSection />
+    <ContactSection />
+  </main>
+  <FooterSection />
 </template>
 
 <script setup lang="ts">
+import { useScrollReveal } from '@/composables/useScrollReveal'
+import NavBar from '@/components/NavBar.vue'
+import HeroSection from '@/components/HeroSection.vue'
+import ServicesSection from '@/components/ServicesSection.vue'
+import CasesSection from '@/components/CasesSection.vue'
+import AboutSection from '@/components/AboutSection.vue'
+import ContactSection from '@/components/ContactSection.vue'
+import FooterSection from '@/components/FooterSection.vue'
+
+useScrollReveal()
 </script>

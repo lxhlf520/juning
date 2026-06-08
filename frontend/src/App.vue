@@ -1,24 +1,15 @@
 <template>
-  <NavBar />
-  <main>
-    <HeroSection />
-    <ServicesSection />
-    <CasesSection />
-    <AboutSection />
-    <ContactSection />
-  </main>
-  <FooterSection />
+  <router-view />
 </template>
 
 <script setup lang="ts">
+import { useRoute } from 'vue-router'
 import { useScrollReveal } from '@/composables/useScrollReveal'
-import NavBar from '@/components/NavBar.vue'
-import HeroSection from '@/components/HeroSection.vue'
-import ServicesSection from '@/components/ServicesSection.vue'
-import CasesSection from '@/components/CasesSection.vue'
-import AboutSection from '@/components/AboutSection.vue'
-import ContactSection from '@/components/ContactSection.vue'
-import FooterSection from '@/components/FooterSection.vue'
 
-useScrollReveal()
+const route = useRoute()
+
+// 只在首页启用滚动动画
+if (route.path === '/') {
+  useScrollReveal()
+}
 </script>
