@@ -10,7 +10,7 @@ from datetime import datetime
 from server.database import get_db
 from server.models import Service, Case, ContactMessage, CompanyInfo, User, Project
 from server.auth import (
-    verify_password, get_password_hash, create_access_token,
+    verify_password, hash_password, create_access_token,
     get_current_user, require_admin
 )
 
@@ -287,7 +287,7 @@ def create_user(data: UserCreate, current_user: User = Depends(require_admin), d
         raise HTTPException(status_code=400, detail="用户名已存在")
     user = User(
         username=data.username,
-        hashed_password=get_password_hash(data.password),
+        hashed_password=hash_password(data.password),
         display_name=data.display_name,
         role=data.role,
     )
@@ -313,7 +313,7 @@ def update_user(user_id: int, data: UserUpdate, current_user: User = Depends(req
     if data.is_active is not None:
         user.is_active = data.is_active
     if data.password:
-        user.hashed_password = get_password_hash(data.password)
+        user.hashed_password = hash_password(data.password)
     db.commit()
     db.refresh(user)
     return UserOut(
