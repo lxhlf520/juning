@@ -91,34 +91,8 @@ class Project(Base):
     delivery_method = Column(String(100), default="")       # 交付方式: 数据交付/代码交付/平台交付/工具交付
     is_settled = Column(String(20), default="未结算")        # 是否结算: 已结算/未结算
     client = Column(String(100), default="")               # 甲方
+    remark = Column(Text, default="")                      # 备注
     created_by = Column(Integer, default=0)                # 创建人ID
     created_at = Column(DateTime, server_default=func.now())
     updated_at = Column(DateTime, server_default=func.now(), onupdate=func.now())
     is_active = Column(Boolean, default=True)
-    created_at = Column(DateTime, server_default=func.now())
-
-
-class Project(Base):
-    __tablename__ = "projects"
-
-    id = Column(Integer, primary_key=True, autoincrement=True)
-    start_date = Column(String(20), default="")           # 开始时间
-    name = Column(String(200), nullable=False)             # 项目名称
-    description = Column(Text, default="")                # 需求描述
-    priority = Column(String(10), default="中")            # 优先级：高/中/低
-    client_type = Column(String(20), default="")          # 目标客户端类型
-    url = Column(String(500), default="")                  # 网址
-    quote = Column(Float, default=0)                        # 报价
-    profit = Column(Float, default=0)                       # 利润
-    payment_method = Column(String(200), default="")       # 支付方式
-    duration = Column(String(200), default="")             # 工期
-    progress = Column(String(50), default="待开始")         # 进度
-    is_outsourced = Column(String(10), default="否")        # 是否外包
-    outsourced_to = Column(String(100), default="")         # 外包人
-    delivery_method = Column(String(50), default="")        # 交付方式
-    is_settled = Column(String(20), default="未结算")       # 是否结算
-    client = Column(String(100), default="")               # 甲方
-    remark = Column(Text, default="")                      # 备注
-    created_by = Column(Integer, default=0)                 # 创建人ID
-    created_at = Column(DateTime, server_default=func.now())
-    updated_at = Column(DateTime, server_default=func.now(), onupdate=func.now())
