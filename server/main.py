@@ -18,8 +18,9 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
 
 from server.database import engine, Base
-from server.models import Service, Case, ContactMessage, CompanyInfo
+from server.models import Service, Case, ContactMessage, CompanyInfo, User, Project
 from server.routes import router
+from server.admin_routes import router as admin_router
 from server.seed import seed_data
 
 
@@ -42,6 +43,7 @@ app.add_middleware(
 )
 
 app.include_router(router)
+app.include_router(admin_router)
 
 # 生产环境下托管前端静态文件
 ENV = os.getenv("COZE_PROJECT_ENV", "DEV")

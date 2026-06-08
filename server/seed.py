@@ -117,10 +117,10 @@ def seed_data():
 
         # 默认管理员账号
         if db.query(User).count() == 0:
-            from server.auth import get_password_hash
+            from server.auth import hash_password
             db.add(User(
                 username="admin",
-                hashed_password=get_password_hash("admin123"),
+                hashed_password=hash_password("admin123"),
                 display_name="管理员",
                 role="admin",
                 is_active=True,
