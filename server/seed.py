@@ -2,7 +2,7 @@
 初始数据种子
 """
 from server.database import SessionLocal
-from server.models import Service, Case, CompanyInfo
+from server.models import Service, Case, CompanyInfo, User, Project
 
 SERVICES_SEED = [
     {
@@ -83,6 +83,22 @@ COMPANY_INFO_SEED = [
     {"key": "company_wechat", "value": "juningdata"},
 ]
 
+PROJECTS_SEED = [
+    {"start_date": "", "name": "财新网", "description": "文章内容、评论、AI提问选项", "priority": "低", "client_type": "web", "quote": 0, "progress": "待开始", "is_outsourced": "否", "delivery_method": "数据交付", "is_settled": "未结算", "client": "高博"},
+    {"start_date": "", "name": "startmaker", "description": "循环采集用户信息、作品信息、评论信息", "priority": "低", "client_type": "app", "quote": 1800, "progress": "正在进行", "is_outsourced": "否", "delivery_method": "数据交付", "is_settled": "未结算", "client": "高博", "duration": "截至到25日完成上线测试"},
+    {"start_date": "2026-02-20", "name": "分布式PG数据库平台搭建", "description": "", "priority": "高", "quote": 1500, "progress": "已完成", "is_outsourced": "否", "delivery_method": "平台交付", "is_settled": "未结算", "client": "高博"},
+    {"start_date": "2026-02-20", "name": "数据迁移", "description": "", "priority": "高", "quote": 1000, "progress": "已完成", "is_outsourced": "否", "delivery_method": "平台交付", "is_settled": "未结算", "client": "高博"},
+    {"start_date": "2026-03-20", "name": "X", "description": "网站会不定时更新，一旦更新之后，我们就拿到这个帖子，然后每隔5分钟，抓一遍这个帖子的转赞评数量", "priority": "高", "client_type": "web", "quote": 2000, "progress": "正在进行", "is_outsourced": "是", "delivery_method": "代码交付", "is_settled": "未结算", "client": "高博", "payment_method": "前期30%、项目完成60%、一周内运行没问题支付剩余尾款"},
+    {"start_date": "2026-03-19", "name": "营销2.0 爬虫", "description": "需每月5号、20号分别导出低保五保用户明细与民政局提供的名单匹配出新增和取消的每月进行动态更新，制作成exe可执行程序", "priority": "高", "client_type": "web", "quote": 800, "progress": "已完成", "is_outsourced": "否", "delivery_method": "工具交付", "is_settled": "未结算", "client": "高博"},
+    {"start_date": "2026-03-22", "name": "glassdoor", "description": "补充截至到现在的公司评论信息", "priority": "高", "client_type": "web", "quote": 4000, "progress": "已完成", "is_outsourced": "否", "delivery_method": "数据交付", "is_settled": "未结算", "client": "高博"},
+    {"start_date": "2026-04-02", "name": "天气网站", "description": "更新数据", "priority": "高", "client_type": "web", "quote": 500, "progress": "已完成", "is_outsourced": "否", "delivery_method": "数据交付", "is_settled": "未结算", "client": "高博"},
+    {"start_date": "", "name": "google map", "description": "采集google地图中商家信息", "priority": "高", "client_type": "web", "quote": 0, "progress": "待开始", "is_outsourced": "否", "client": "高博"},
+    {"start_date": "2026-05-07", "name": "历史天气预报数据", "description": "", "priority": "中", "quote": 1300, "progress": "正在进行", "is_outsourced": "否", "is_settled": "已结算", "client": "门老师", "payment_method": "代理另算（目前先开并发5个ip,测试）"},
+    {"start_date": "2026-05-10", "name": "微博数据监控", "description": "", "priority": "中", "progress": "待开始", "is_outsourced": "否", "client": "门老师"},
+    {"start_date": "2026-05-20", "name": "wall street journal", "description": "", "priority": "高", "progress": "正在进行", "is_outsourced": "否", "client": "高博", "duration": "本月完成代码上线采集工作", "remark": "需要交接"},
+    {"start_date": "2026-05-20", "name": "daily mail", "description": "", "priority": "高", "progress": "正在进行", "is_outsourced": "否", "client": "高博", "duration": "本月完成代码上线采集工作", "remark": "需要交接"},
+]
+
 
 def seed_data():
     db = SessionLocal()
@@ -98,6 +114,22 @@ def seed_data():
         if db.query(CompanyInfo).count() == 0:
             for ci in COMPANY_INFO_SEED:
                 db.add(CompanyInfo(**ci))
+
+        # 默认管理员账号
+        if db.query(User).count() == 0:
+            from server.auth import get_password_hash
+            db.add(User(
+                username="admin",
+                hashed_password=get_password_hash("admin123"),
+                display_name="管理员",
+                role="admin",
+                is_active=True,
+            ))
+
+        # 示例项目数据
+        if db.query(Project).count() == 0:
+            for p in PROJECTS_SEED:
+                db.add(Project(**p))
 
         db.commit()
     finally:
