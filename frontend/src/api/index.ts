@@ -80,6 +80,16 @@ export interface ProjectItem {
   updated_at: string
 }
 
+export interface ContactMessageItem {
+  id: number
+  name: string
+  email: string
+  phone: string
+  company: string
+  message: string
+  created_at: string
+}
+
 export interface DashboardStats {
   total: number
   in_progress: number
@@ -245,4 +255,17 @@ export async function fetchDashboardStats(): Promise<DashboardStats> {
   const res = await authFetch(`${API_BASE}/api/dashboard/stats`)
   if (!res.ok) throw new Error('获取统计失败')
   return res.json()
+}
+
+// ---------- Contact Messages API ----------
+
+export async function fetchContactMessages(): Promise<ContactMessageItem[]> {
+  const res = await authFetch(`${API_BASE}/api/contact-messages`)
+  if (!res.ok) throw new Error('获取留言列表失败')
+  return res.json()
+}
+
+export async function deleteContactMessage(id: number): Promise<void> {
+  const res = await authFetch(`${API_BASE}/api/contact-messages/${id}`, { method: 'DELETE' })
+  if (!res.ok) throw new Error('删除留言失败')
 }
